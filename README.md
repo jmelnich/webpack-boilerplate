@@ -20,7 +20,7 @@ If you use any imports in the index.js file, webpack will handle them.
 
 ### Output
 
-The output is a configuration of where webpack should output your bundle. It defaults to the  './dist/main.js' file.
+The output is a configuration of where webpack should output your bundle. In my case, it defaults to the  './server/bundle.js' file.
 
 ```
 const path = require('path');
@@ -28,8 +28,22 @@ const path = require('path');
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    path: path.resolve(__dirname, 'server'),
+    filename: 'bundle.js'
   }
 };
 ```
+
+## Deployment
+
+run npm install to install all dependancies from package.json
+They are:
+webpack
+
+Build the current application (will bundle all js to server/bundle.js) with command
+
+```
+npm run start
+```
+
+This will create a directory node_modules with webpack in it.
