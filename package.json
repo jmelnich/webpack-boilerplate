@@ -1,0 +1,19 @@
+{
+  "name": "webpack-boilerplate",
+  "version": "1.0.0",
+  "description": "Plain webpack 4 boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "jmelnich",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.20.2"
+  }
+}
