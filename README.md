@@ -36,9 +36,14 @@ module.exports = {
 
 ## Deployment
 
-run npm install to install all dependancies from package.json
-They are:
+The dependancies from package.json are:
 webpack
+webpack-cli
+
+If you a happy with the package.json file, run 
+```
+npm install
+```
 
 Build the current application (will bundle all js to server/bundle.js) with command
 
