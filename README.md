@@ -37,8 +37,17 @@ module.exports = {
 ## Deployment
 
 The dependancies from package.json are:
-webpack
-webpack-cli
+* webpack
+* webpack-cli
+* css-loader
+* style-loader
+
+### Dependancies explanation
+Webpack and webpack-cli are needed by default.
+CSS:
+In order to serve css code to the browser, we need 'style-loader'.
+Also, we need 'css-loader' that interprets imported css files.
+
 
 If you a happy with the package.json file, run 
 ```
