@@ -41,15 +41,33 @@ The dependancies from package.json are:
 * webpack-cli
 * css-loader
 * style-loader
+* sass-loader (may be configured to less. If you do so, don't forget to change webpack.config.js to
+test: /\.scss$/, be less instead).
+* node-sass (may be configured to less).
+* url-loader
+* file-loader
 
 ### Dependancies explanation
 Webpack and webpack-cli are needed by default.
-CSS:
+#### CSS:
 In order to serve css code to the browser, we need 'style-loader'.
 Also, we need 'css-loader' that interprets imported css files.
 
+#### SCSS:
+'sass-loader' handle sass/scss files in your project
+'node-sass' is needed to natively compile .scss files to css
 
-If you a happy with the package.json file, run 
+#### Image loaders:
+Want to use any images for your background in your css? No problem, you just need to configure 'url-loader' and have
+'file-loader' to handle huge files.
+The 'url-loader' will transform your images into base64 URIs.
+Option 5000:
+If your images are big though, it might be beneficial to include them as separate files so that the browser might fetch them in parallel.
+
+This is why the url-loader has the limit property (see in webpack.config file). It is a size (in bytes) that will determine that the file is too big to serve it as a base64 URI. Instead, the file-loader will be used that will just copy your files.
+
+
+If you a happy with the package.json file, run
 ```
 npm install
 ```
