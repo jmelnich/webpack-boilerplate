@@ -46,6 +46,11 @@ test: /\.scss$/, be less instead).
 * node-sass (may be configured to less).
 * url-loader
 * file-loader
+* @babel/core
+* babel-loader
+* babel-preset-env
+* babel-node (for server side understanding es2015, configurable in .babelrc)
+* nodemon (restart server any time we change something on server side)
 
 ### Dependancies explanation
 Webpack and webpack-cli are needed by default.
@@ -66,6 +71,9 @@ If your images are big though, it might be beneficial to include them as separat
 
 This is why the url-loader has the limit property (see in webpack.config file). It is a size (in bytes) that will determine that the file is too big to serve it as a base64 URI. Instead, the file-loader will be used that will just copy your files.
 
+#### Babel:
+Allows using the latest versions of JavaScript and transpile files to ordinary JavaScript.
+For that, we need loader - 'babel-loader' and preset (babel-preset-env); Also, '@babel/core'.
 
 If you a happy with the package.json file, run
 ```

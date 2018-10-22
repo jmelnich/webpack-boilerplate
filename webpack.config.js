@@ -3,7 +3,8 @@ const path = require('path');
 module.exports = {
   entry: './client/index.js',
   output: {
-    path: path.resolve(__dirname, "server/"),
+    path: '/',
+    publicPath: 'http://localhost:5000/',
     filename: 'bundle.js'
   },
 	module: {
