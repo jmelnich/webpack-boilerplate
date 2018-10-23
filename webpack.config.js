@@ -1,12 +1,21 @@
-const path = require('path');
+import path from 'path'
+import webpack from 'webpack'
 
 module.exports = {
-  entry: './client/index.js',
+  entry: ['webpack-hot-middleware/client',
+      'react-hot-loader/patch',
+      './client/index.js'],
   output: {
     path: '/',
     publicPath: '/',
     filename: 'bundle.js'
   },
+    mode: 'development',
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin()
+    ],
 	module: {
 		rules:
     [

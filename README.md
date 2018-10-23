@@ -68,6 +68,10 @@ Server side:
 * "nodemon"
 * webpack-dev-middleware
 
+Hot reloading:
+* webpack-hot-middleware
+* react-hot-loader
+
 
 ### Dependancies explanation
 Webpack and webpack-cli are needed by default.
