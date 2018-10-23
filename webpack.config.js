@@ -11,9 +11,9 @@ module.exports = {
 		rules:
     [
       {
-			 test:  /\.scss$/,
-			 use: ['style-loader', 'css-loader', 'sass-loader']
-		  },
+        test:  /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
       {
         test: /\.(png|jpg|gif)$/,
         use: [
@@ -28,13 +28,14 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
+        include: [path.join(__dirname, 'client/')],
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env']
-          }
+          loader: 'babel-loader'
         }
       }
     ]
-	}
+	},
+    resolve: {
+        extensions: ['.js', '.jsx']
+    }
 };

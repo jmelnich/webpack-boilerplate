@@ -1,2 +1,6 @@
 import './css/style.scss';
-alert('hi');
+import React from 'react'
+import {render} from 'react-dom'
+import App from './components/App'
+
+render(<App/>, document.getElementById('app'));
