@@ -37,23 +37,37 @@ module.exports = {
 ## Deployment
 
 The dependancies from package.json are:
-* webpack
-* webpack-cli
-* css-loader
-* style-loader
-* sass-loader (may be configured to less. If you do so, don't forget to change webpack.config.js to
-test: /\.scss$/, be less instead).
-* node-sass (may be configured to less).
-* url-loader
-* file-loader
-* @babel/core
-* babel-loader
-* babel-preset-env
-* babel-node (for server side understanding es2015, configurable in .babelrc)
 
-* express (server)
+Webpack itself:
+* "webpack"
+* "webpack-cli"
+
+Css and Scss (Sass):
+* "css-loader"
+* "style-loader"
+* "sass-loader"
+* "node-sass"
+
+Image loaders:
+* "file-loader"
+* "url-loader"
+
+React itself:
+* "react"
+* "react-dom"
+
+React loaders:
+* "babel-loader"
+* "babel-preset-env"
+* "babel-preset-react"
+
+Server side:
+* "express"
+* "babel-cli"
+* "babel-core"
+* "nodemon"
 * webpack-dev-middleware
-* nodemon (restart server any time we change something on server side)
+
 
 ### Dependancies explanation
 Webpack and webpack-cli are needed by default.
@@ -76,7 +90,11 @@ This is why the url-loader has the limit property (see in webpack.config file). 
 
 #### Babel:
 Allows using the latest versions of JavaScript and transpile files to ordinary JavaScript.
-For that, we need loader - 'babel-loader' and preset (babel-preset-env); Also, '@babel/core'.
+For that, we need loader - 'babel-loader' and preset (babel-preset-env)
+
+#### Server side:
+For server, we will be using express. To transpile server, we need to have babel-node that comes with 'babel-core' package. We use nodemon to restart server any time we change something on server side.
+Package "webpack-dev-middleware" serves the files emitted from webpack from memory, so we don't actually have bundle.js file.
 
 If you a happy with the package.json file, run
 ```
