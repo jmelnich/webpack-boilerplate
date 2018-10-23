@@ -4,7 +4,7 @@ module.exports = {
   entry: './client/index.js',
   output: {
     path: '/',
-    publicPath: 'http://localhost:5000/',
+    publicPath: '/',
     filename: 'bundle.js'
   },
 	module: {

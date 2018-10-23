@@ -50,6 +50,9 @@ test: /\.scss$/, be less instead).
 * babel-loader
 * babel-preset-env
 * babel-node (for server side understanding es2015, configurable in .babelrc)
+
+* express (server)
+* webpack-dev-middleware
 * nodemon (restart server any time we change something on server side)
 
 ### Dependancies explanation
