@@ -48,7 +48,7 @@ Css and Scss (Sass):
 * "sass-loader"
 * "node-sass"
 
-Image loaders:
+Image loaders and fonts(ttf, woff etc):
 * "file-loader"
 * "url-loader"
 

@@ -1,0 +1,10 @@
+@import "reset";
+@import "variables";
+
+body {
+font-family: $OpenSans-Regular;
+ background: url('../img/kitty.png');
+ a {
+ 	color: green;
+ }
+}
