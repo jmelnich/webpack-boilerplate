@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {AvForm, AvField} from 'availity-reactstrap-validation';
-import FormHead from "./FormHead";
 import {Button} from 'reactstrap';
 import {connect} from 'react-redux';
 import {loginUser} from '../../actions/formsActions';
@@ -35,7 +34,6 @@ class Login extends Component {
 	return (
 	  <div className="form-nav">
 		<div className="container-form">
-		  <FormHead/>
 		  <AvForm className="flex-col" onValidSubmit={this.handleSubmit}>
 			<AvField name="email" label="Email" type="email" onChange={this.handleChange} required/>
 			<AvField name="password" label="Password" type="password" onChange={this.handleChange} required/>

@@ -4,38 +4,43 @@
 You only need node.js pre-installed and you’re good to go.
 
 
-## Dependencies
+## Dev Dependencies
 
-The dependencies from package.json are:
+The development dependencies from package.json are:
 
 Webpack itself:
-* "webpack"
-* "webpack-cli"
+* "webpack", "webpack-cli"
+* "html-webpack-plugin"
+* "webpack-dev-middleware"
+* "webpack-dev-server"
 
-Css and Scss (Sass):
-* "css-loader"
-* "style-loader"
-* "sass-loader"
-* "node-sass"
+Style loaders:
+* "style-loader", "css-loader"
+* "node-sass", "sass-loader"
 
 Image loaders:
 * "file-loader"
 * "url-loader"
 
-React itself:
-* "react"
-* "react-dom"
-* "redux"
-
 React loaders:
 * "babel-loader"
-* "babel-preset-env"
-* "babel-preset-react"
+* "babel-preset-env", "babel-preset-react", "babel-preset-stage-0"
 * "babel-core"
 
 Hot reloading:
-* webpack-hot-middleware
-* react-hot-loader
+* "webpack-hot-middleware"
+* "react-hot-loader"
+
+## Dependencies
+React itself:
+* "react", "react-dom"
+* "react-router-dom" - router
+* "redux", "redux-thunk"
+
+In the box solutions:
+* "bootstrap", "reactstrap", "availity-reactstrap-validation"
+* "axios"
+
 
 ```
 npm install
