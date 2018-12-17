@@ -1,4 +1,4 @@
-# Webpack 4 Boilerplate
+# Webpack 4 Boilerplate Server side
 
 ## Requirements
 You only need node.js pre-installed and you’re good to go.

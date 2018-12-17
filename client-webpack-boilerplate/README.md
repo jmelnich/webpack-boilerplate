@@ -1,4 +1,4 @@
-# Bidding
+# Webpack 4 Boilerplate Client Side
 
 ## Requirements
 You only need node.js pre-installed and you’re good to go.
