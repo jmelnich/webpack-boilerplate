@@ -4,6 +4,7 @@ Should you need server and client, select ```server-client-webpack boilerplate``
 
 In case you need client side only, choose ```client-webpack boilerplate```.
 
+You may change them at your own discretion.
 
 ## Server-client-webpack boilerplate
 This boilerplate includes server-side rendering.
@@ -37,5 +38,3 @@ Webpack manages scss, files.
 OpenSans font is pre-installed.
 
 ! Please, change preset to the latest stage.
-
-Change this boilerplates at your own discretion.
