@@ -3,15 +3,17 @@
 ## Requirements
 You only need node.js pre-installed and you’re good to go.
 
+## Basic Configurations
 
-## Dev Dependencies
+### Dev Dependencies
 
 The development dependencies from package.json are:
 
 Webpack itself:
 * "webpack", "webpack-cli"
 * "html-webpack-plugin"
-* "webpack-dev-middleware"
+
+Serving and reloading:
 * "webpack-dev-server"
 
 Style loaders:
@@ -22,22 +24,28 @@ Image loaders:
 * "file-loader"
 * "url-loader"
 
-React loaders:
+ES6 loaders:
 * "babel-loader"
-* "babel-preset-env", "babel-preset-react", "babel-preset-stage-0"
 * "babel-core"
+* "babel-preset-env" (already added to .babelrc)
+
+## Additional configurations
+### Dependencies for React
+
+Dev dependencies (loaders):
+* "babel-preset-react" (add to .babelrc)
+In case of any advanced usage of Ecmascript, please install the last stage 4 preset:
+* "babel-preset-stage-4" (add to .babelrc)
 
 Hot reloading:
-* "webpack-hot-middleware"
 * "react-hot-loader"
 
-## Dependencies
 React itself:
 * "react", "react-dom"
 * "react-router-dom" - router
 * "redux", "redux-thunk"
 
-In the box solutions:
+Common the box solutions can be:
 * "bootstrap", "reactstrap", "availity-reactstrap-validation"
 * "axios"
 
