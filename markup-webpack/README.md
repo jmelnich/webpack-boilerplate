@@ -43,12 +43,8 @@ npm run dev
 It will serve bundle from memory.
 For physical bundle.js file, run 
 ```
-npm run build:dev
+npm run build
 ```
- or 
- ```
- npm run build:prod
- ```
 
 To configure output place, change webpack.congfig at
 ```

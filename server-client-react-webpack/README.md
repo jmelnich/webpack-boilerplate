@@ -1,4 +1,4 @@
-# Webpack 4 Boilerplate Server side
+# Webpack 4 Boilerplate Server side: Express/React
 
 ## Requirements
 You only need node.js pre-installed and you’re good to go.
@@ -15,24 +15,8 @@ module.exports = {
   entry: './client/index.js'
 };
 ```
-
+No output file here, since webpack-dev-middle will serve bundle.js from memory.
 If you use any imports in the index.js file, webpack will handle them.
-
-### Output
-
-The output is a configuration of where webpack should output your bundle. In my case, it defaults to the  './server/bundle.js' file.
-
-```
-const path = require('path');
-
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'server'),
-    filename: 'bundle.js'
-  }
-};
-```
 
 ## Deployment
 
@@ -56,17 +40,19 @@ React itself:
 * "react"
 * "react-dom"
 
-React loaders:
+ES6 loaders:
 * "babel-loader"
-* "babel-preset-env"
-* "babel-preset-react"
+* "babel-core"
+* "babel-preset-env" (already added to .babelrc)
+
+React loaders:
+* "babel-preset-react" (already added to .babelrc)
 
 Server side:
+* webpack-dev-middleware
 * "express"
 * "babel-cli"
-* "babel-core"
 * "nodemon"
-* webpack-dev-middleware
 
 Hot reloading:
 * webpack-hot-middleware
