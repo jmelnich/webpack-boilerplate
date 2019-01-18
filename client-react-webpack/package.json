@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --open",
+    "pretest": "eslint --ignore-path .gitignore .",
     "build": "webpack --mode production"
   },
   "keywords": [
@@ -18,8 +19,10 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
+    "eslint": "^5.12.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
     "node-sass": "^4.9.4",
     "sass-loader": "^7.1.0",
     "scss-loader": "0.0.1",
