@@ -1,5 +1,12 @@
 {
-  "rules": {
-    "max-len": [2, 80, 8]
-  }
+  "globals": {
+    "document": true,
+    "window": true
+  },
+  "extends": ["airbnb"],
+  "plugins": [
+    "jsx-a11y",
+    "react",
+    "import"
+  ]
 }
