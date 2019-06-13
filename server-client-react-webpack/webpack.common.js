@@ -1,0 +1,73 @@
+import path from 'path';
+import webpack from 'webpack';
+
+module.exports = {
+  entry: ['webpack-hot-middleware/client',
+    'react-hot-loader/patch',
+    './client/index.js'],
+  output: {
+    path: '/',
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
+  mode: 'development',
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin()
+  ],
+  module: {
+    rules:
+      [
+        {
+          test:  /\.scss$/,
+          use: ['style-loader',
+            'css-loader',
+            'sass-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: [
+                  require('autoprefixer')({ overrideBrowserslist: ['> 1%', 'last 2 versions'] }),
+                ],
+              }
+            }
+          ]
+        },
+        {
+          test: /\.(png|jpg|gif)$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 5000
+              }
+            }
+          ]
+        },
+        {
+          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          use: [{
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }]
+        },
+        {
+          test: /\.js$/,
+          exclude: /(node_modules)/,
+          include: [path.join(__dirname, 'client/')],
+          use: [
+            'babel-loader',
+            'eslint-loader',
+          ]
+        }
+      ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  }
+};
