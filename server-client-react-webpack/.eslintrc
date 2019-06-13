@@ -1,0 +1,20 @@
+{
+  "globals": {
+    "document": true,
+    "window": true
+  },
+  "rules":{
+    "linebreak-style": 0,
+    "no-plusplus": "off",
+    "no-console": "off"
+  },
+  "env": {
+    "browser": true
+  },
+  "extends": ["airbnb"],
+  "plugins": [
+    "jsx-a11y",
+    "react",
+    "import"
+  ]
+}
