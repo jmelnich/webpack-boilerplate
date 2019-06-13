@@ -1,5 +1,6 @@
-const path = require ('path');
-const webpack = require ('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
     entry: ['webpack-hot-middleware/client',
@@ -10,54 +11,65 @@ module.exports = {
         publicPath: '/',
         filename: 'bundle.js'
     },
-    mode: 'development',
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin()
+        new webpack.optimize.OccurrenceOrderPlugin(),
     ],
+
     module: {
-        rules:
-            [
-                {
-                    test:  /\.scss$/,
-                    use: ['style-loader', 'css-loader', 'sass-loader']
-                },
-                {
-                    test: /\.(png|jpg|gif)$/,
-                    use: [
-                        {
-                            loader: 'url-loader',
-                            options: {
-                                limit: 5000
-                            }
-                        }
-                    ]
-                },
-                {
-                    test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                    use: [{
-                        loader: 'file-loader',
+        rules: [
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                    {
+                        loader: 'postcss-loader',
                         options: {
-                            name: '[name].[ext]',
-                            outputPath: 'fonts/'
+                            ident: 'postcss',
+                            plugins: [
+                                require('autoprefixer')({ overrideBrowserslist: ['> 1%', 'last 2 versions'] }),
+                            ],
                         }
-                    }]
-                },
-                {
-                    test: /\.js$/,
-                    exclude: /(node_modules)/,
-                    include: [path.join(__dirname, 'client/')],
-                    use: {
-                        loader: 'babel-loader'
                     }
-                }
-            ]
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
+                    'css-loader',
+                ],
+            },
+            {
+                test: /\.html$/,
+                use: 'html-loader'
+            },
+            {
+                test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 100000
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                include: [path.join(__dirname, 'client/')],
+                use: [
+                    'babel-loader',
+                    'eslint-loader',
+                ]
+            },
+        ]
     },
-    devServer: {
-        historyApiFallback: true,
-    },
-    resolve: {
-        extensions: ['.js', '.jsx']
-    }
+
 };
